@@ -1,0 +1,22 @@
+.home-vista {
+  min-height: 100%;
+}
+
+.menu-button {
+  background: transparent;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Roboto Slab', sans-serif;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.menu-button:hover {
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}

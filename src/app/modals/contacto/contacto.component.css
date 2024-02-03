@@ -1,0 +1,19 @@
+.modal-header button {
+  border: none;
+  background: transparent;
+}
+
+.item {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.item:hover {
+  transition: color 0.3s;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.select:hover {
+  cursor: pointer;
+}

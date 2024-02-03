@@ -1,0 +1,29 @@
+.float-button-wsp {
+  cursor: pointer;
+  transition: all .2s;
+  z-index: 9999;
+}
+
+.float-button-wsp:hover {
+  transform: scale(120%);
+  filter: brightness(120%);
+}
+
+.float-button-wsp:hover svg {
+  /*   fill: #25D366; */
+  fill: #09ae45;
+}
+
+.float-button-ig {
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.float-button-ig:hover {
+  transform: scale(120%);
+  filter: brightness(120%);
+}
+
+.float-button-ig:hover svg {
+  fill: url(#gradient);
+}

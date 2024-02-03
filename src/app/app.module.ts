@@ -3,12 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './routes/home/home.component';
+import { SocialButtonsComponent } from './shared/social-buttons/social-buttons.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ContactoComponent } from './modals/contacto/contacto.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    SocialButtonsComponent,
+    ContactoComponent
   ],
   imports: [
+    ModalModule.forRoot(),
     BrowserModule,
     AppRoutingModule
   ],

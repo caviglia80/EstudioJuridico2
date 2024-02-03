@@ -1,1 +1,107 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
+
+
+html {
+  box-sizing: border-box
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+
+body {
+  margin: 0
+}
+
+.w3-tooltip,
+.w3-display-container {
+  position: relative
+}
+
+.w3-display-container:hover .w3-display-hover {
+  display: block
+}
+
+.w3-display-container:hover span.w3-display-hover {
+  display: inline-block
+}
+
+.w3-text-white,
+.w3-hover-text-white:hover {
+  color: #fff !important
+}
+
+.w3-display-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.w3-jumbo {
+  font-size: 64px !important
+}
+
+.w3-display-topleft {
+  position: absolute;
+  left: 0;
+  top: 0
+}
+
+.w3-container:after,
+.w3-container:before,
+.w3-panel:after,
+.w3-panel:before,
+.w3-row:after,
+.w3-row:before,
+.w3-row-padding:after,
+.w3-row-padding:before,
+.w3-cell-row:before,
+.w3-cell-row:after,
+.w3-clear:after,
+.w3-clear:before,
+.w3-bar:before,
+.w3-bar:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.w3-xlarge {
+  font-size: 24px !important
+}
+
+.w3-display-bottomleft {
+  position: absolute;
+  left: 0;
+  bottom: 0
+}
+
+
+.w3-container,
+.w3-panel {
+  padding: 0.01em 16px
+}
+
+.w3-large {
+  font-size: 18px !important
+}
+
+
+small {
+  font-size: 80%
+}
+
+
+a {
+  color: inherit;
+}
