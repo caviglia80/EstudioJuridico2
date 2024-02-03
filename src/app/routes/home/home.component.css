@@ -30,3 +30,35 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.btn-icon {
+  position: relative;
+  transition: .5s ease;
+}
+
+.btn-icon:hover {
+  padding-left: 55px;
+  transition: .3s ease;
+}
+
+.icono-miniatura {
+  display: none;
+  /* Oculta el ícono por defecto */
+  position: absolute;
+  /* Posicionamiento absoluto respecto al botón */
+  left: 10px;
+  /* Posición desde la derecha del botón */
+  top: 50%;
+  /* Centra el ícono verticalmente */
+  transform: translateY(-50%);
+  /* Ajuste fino para centrar el ícono */
+  width: 40px;
+  /* Tamaño del ícono */
+  height: auto;
+  /* Mantiene la proporción del ícono */
+  opacity: .5;
+}
+
+.btn-icon:hover .icono-miniatura {
+  display: inline;
+}
