@@ -1,0 +1,6 @@
+.list-group-item {
+  background-color: #f8f9fa;
+  border-left: 3px solid goldenrod;
+  font-weight: bold;
+  color: #495057;
+}

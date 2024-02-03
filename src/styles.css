@@ -21,6 +21,11 @@ body {
   margin: 0
 }
 
+.modal-header button {
+  border: none;
+  background: transparent;
+}
+
 .w3-tooltip,
 .w3-display-container {
   position: relative

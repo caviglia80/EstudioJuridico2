@@ -7,13 +7,17 @@ import { HomeComponent } from './routes/home/home.component';
 import { SocialButtonsComponent } from './shared/social-buttons/social-buttons.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ContactoComponent } from './modals/contacto/contacto.component';
+import { AreasComponent } from './modals/areas/areas.component';
+import { FaqComponent } from './modals/faq/faq.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SocialButtonsComponent,
-    ContactoComponent
+    ContactoComponent,
+    AreasComponent,
+    FaqComponent
   ],
   imports: [
     ModalModule.forRoot(),

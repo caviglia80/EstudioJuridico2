@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ContactoComponent } from '@modals/contacto/contacto.component';
+import { AreasComponent } from '@modals/areas/areas.component';
+import { FaqComponent } from '@modals/faq/faq.component';
 import { Howl } from 'howler';
 
 @Component({
@@ -26,6 +28,14 @@ export class HomeComponent implements OnInit {
 
   openContacto() {
     this.modalRef = this.modalService.show(ContactoComponent);
+  }
+
+  openAreas() {
+    this.modalRef = this.modalService.show(AreasComponent);
+  }
+
+  openFaq() {
+    this.modalRef = this.modalService.show(FaqComponent);
   }
 
 
