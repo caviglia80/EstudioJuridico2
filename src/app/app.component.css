@@ -2,12 +2,6 @@ body {
   height: 100vh;
 }
 
-body,
-h1,
-h5 {
-  font-family: "Raleway", sans-serif
-}
-
 .imagen {
   background-image: url('src\assets\4.jpg');
   background-size: cover;
