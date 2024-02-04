@@ -9,7 +9,7 @@
       Oficinas
     </h4>
 
-    <button type="button" class="close" aria-label="Cerrar" (click)="modalRef.hide()">
+    <button type="button" class="btn-close btn-close-black" aria-label="Cerrar" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -17,7 +17,7 @@
   <div class="modal-body">
     <!-- Spinner centrado en el medio del modal verticalmente y horizontalmente -->
     <div *ngIf="!iframeCargado" class="text-center">
-      <div class="spinner-border text-primary" role="status"> </div>
+      <div class="spinner-border text-dark" role="status"> </div>
     </div>
     <!-- Iframe -->
     <iframe [hidden]="!iframeCargado" class="border-roun"
