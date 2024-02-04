@@ -16,14 +16,19 @@ export class HomeComponent implements OnInit {
 
   constructor(private modalService: BsModalService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.sound = new Howl({
       src: ['assets/sound/button-50.mp3']
     });
   }
 
-  onHoverButton() {
-    if (this.sound) this.sound.play();
+  async onHoverButton() {
+    try {
+      if (this.sound?.playing() || !this.sound) this.sound = new Howl({ src: ['assets/sound/button-50.mp3'] });
+      if (this.sound) this.sound.play();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   openContacto() {
