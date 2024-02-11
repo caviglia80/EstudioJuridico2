@@ -1,1 +1,1 @@
-Version 3 de EstudioJuridico.
+Version 2 de EstudioJuridico diseñado con Angular y Bootstrap.
