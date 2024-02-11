@@ -1,1 +1,1 @@
-Version 2 de EstudioJuridico diseñado con Angular y Bootstrap.
+Nuevo diseño minimalista para un Estudio Jurídico con Angular y Bootstrap.
