@@ -3,7 +3,7 @@ body {
 }
 
 .imagen {
-  background-image: url('src/assets/img/test/test1.jpg');
+  background-image: url('src/assets/img/fondo.png');
   /* background-image: url('src\assets\img\fondo2.jpg'); */
   background-size: cover;
   background-position: center;
