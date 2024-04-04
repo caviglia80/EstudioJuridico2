@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   openAreas() {
-    this.modalRef = this.modalService.show(AreasComponent);
+    this.modalRef = this.modalService.show(AreasComponent, { class: 'modal-xl opacity-75 modal-dialog-centered' });
   }
 
   openConsulta() {

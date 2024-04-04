@@ -1,30 +1,77 @@
 <div class="modal-content">
   <div class="modal-header">
-    <h5 class="modal-title">Nuestras Areas</h5>
+    <h5 class="modal-title"><strong>Áreas prácticas</strong></h5>
     <button type="button" class="btn-close btn-close-black" aria-label="Cerrar" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
 
-  <div class="modal-body">
-    <ul class="list-group">
-      <li class="list-group-item">Salud</li>
-      <li class="list-group-item">Amparo</li>
-      <li class="list-group-item">Administrativo</li>
-      <li class="list-group-item">Familia</li>
-      <li class="list-group-item">Mediacion y Conciliacion</li>
-      <li class="list-group-item">Defensa del Consumidor</li>
-      <li class="list-group-item">Laboral</li>
-      <li class="list-group-item">Civil</li>
-      <li class="list-group-item">Comercial</li>
-      <li class="list-group-item">Sucesiones</li>
-      <li class="list-group-item">Sociedades</li>
-      <li class="list-group-item">Contratos</li>
-      <li class="list-group-item">Concursos y Quiebras</li>
-      <li class="list-group-item">Penal</li>
-    </ul>
-  </div>
+  <div class="modal-body p-1">
+    <div class="areas row row-cols-1 row-cols-lg-2 align-items-stretch g-1 p-1">
 
-  <!-- <div class="modal-footer">
-  </div> -->
+      <div class="col p-1">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4">
+          <div class="d-flex flex-column flex-start h-100 p-4 pb-2">
+            <h3 class="pt-2 mt-3">CIVIL Y COMERCIAL</h3>
+            <ul class="list-unstyled ps-2">
+              <li><small>Accidentes de transito</small></li>
+              <li><small>Daños y perjuicios</small></li>
+              <li><small>Sucesiones</small></li>
+              <li><small>Usucapión</small></li>
+              <li><small>Contratos</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col p-1">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4">
+          <div class="d-flex flex-column h-100 p-4 pb-2">
+            <h3 class="pt-2 mt-3">LABORAL</h3>
+            <ul class="list-unstyled ps-2">
+              <li><small>Contratos de trabajo: modalidades contractuales</small></li>
+              <li><small>Enfermedades y accidentes laborales (ART)</small></li>
+              <li><small>Asesoría para el trabajador</small></li>
+              <li><small>Diferencias salariales</small></li>
+              <li><small>Trabajo no registrado</small></li>
+              <li><small>Asesoría empresaria</small></li>
+              <li><small>Despidos</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col p-1">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4">
+          <div class="d-flex flex-column h-100 p-4 pb-2">
+            <h3 class="pt-2 mt-3">DERECHO DE FAMILIA</h3>
+            <ul class="list-unstyled ps-2">
+              <li><small>Liquidación de Sociedad conyugal</small></li>
+              <li><small>Régimen de cuidado personal</small></li>
+              <li><small>Régimen de comunicación</small></li>
+              <li><small>Responsabilidad parental</small></li>
+              <li><small>Violencia Familiar</small></li>
+              <li><small>Alimentos</small></li>
+              <li><small>Divorcio</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col p-1">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4">
+          <div class="d-flex flex-column h-100 p-4 pb-2">
+            <h3 class="pt-2 mt-3">OTRAS</h3>
+            <ul class="list-unstyled ps-2">
+              <li><small>Prepagas y Obras Sociales</small></li>
+              <li><small>Concurso y Quiebras</small></li>
+              <li><small>Amparo de Salud</small></li>
+              <li><small>Desalojo</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>

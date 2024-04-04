@@ -1,89 +1,32 @@
 <div class="modal-content rounded-3 border-0">
   <div class="modal-header">
+    <h5 class="modal-title"><strong>Consultas frecuentes</strong></h5>
     <button type="button" class="btn-close btn-close-black" aria-label="Cerrar" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
 
   <div class="modal-body p-1">
-
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-1 p-1">
+
+      <div class="col p-1 pressButton">
+        <div (click)="enviarTexto('Necesito asesoria legal')"
+          class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4">
+          <div class="d-flex flex-column h-100 p-5">
+            <h3 class="p-5">CONSULTAS</h3>
+          </div>
+        </div>
+      </div>
 
       <div class="col p-1 pressButton">
         <div (click)="enviarTexto('Tengo una urgencia')"
           class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4">
-          <div class="d-flex flex-column h-100 p-4 pb-2">
-            <h3 class="pt-2 mt-3">TENGO UNA URGENCIA</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="assets\img\0.ico" alt="abogados" width="48" height="48" class="rounded-circle">
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col p-1 pressButton">
-        <div (click)="enviarTexto('Necesito asesoria legal')"
-          class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4">
-          <div class="d-flex flex-column h-100 p-4 pb-2">
-            <h3 class="pt-2 mt-3">NECESITO ASESORIA LEGAL</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="assets\img\0.ico" alt="abogados" width="48" height="48" class="rounded-circle">
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col p-1 pressButton">
-        <div (click)="enviarTexto('Me notificaron')"
-          class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4">
-          <div class="d-flex flex-column h-100 p-4 pb-2">
-            <h3 class="pt-2 mt-3">ME NOTIFICARON</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="assets\img\0.ico" alt="abogados" width="48" height="48" class="rounded-circle">
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col p-1 pressButton">
-        <div (click)="enviarTexto('Necesito asesoria legal')"
-          class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4">
-          <div class="d-flex flex-column h-100 p-4 pb-2">
-            <h3 class="pt-2 mt-3">NECESITO ASESORIA LEGAL, CON FACILIDADES DE PAGO</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="assets\img\0.ico" alt="abogados" width="48" height="48" class="rounded-circle">
-              </li>
-            </ul>
+          <div class="d-flex flex-column h-100 p-5">
+            <h3 class="p-5">URGENCIAS</h3>
           </div>
         </div>
       </div>
 
     </div>
-
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <div class="modal-footer">
-  </div> -->
 </div>
