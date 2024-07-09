@@ -9,6 +9,13 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ContactoComponent } from './modals/contacto/contacto.component';
 import { AreasComponent } from './modals/areas/areas.component';
 import { ConsultaComponent } from './modals/consulta/consulta.component';
+import { FilesComponent } from './modals/files/files.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -17,12 +24,19 @@ import { ConsultaComponent } from './modals/consulta/consulta.component';
     SocialButtonsComponent,
     ContactoComponent,
     AreasComponent,
-    ConsultaComponent
+    ConsultaComponent,
+    FilesComponent
   ],
   imports: [
     ModalModule.forRoot(),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

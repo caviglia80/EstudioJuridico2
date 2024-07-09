@@ -4,6 +4,7 @@ import { ContactoComponent } from '@modals/contacto/contacto.component';
 import { AreasComponent } from '@modals/areas/areas.component';
 import { ConsultaComponent } from '@modals/consulta/consulta.component';
 import { Howl } from 'howler';
+import { FilesComponent } from '@modals/files/files.component';
 
 @Component({
   selector: 'app-home',
@@ -41,5 +42,9 @@ export class HomeComponent implements OnInit {
 
   openConsulta() {
     this.modalRef = this.modalService.show(ConsultaComponent, { class: 'modal-xl opacity-75 modal-dialog-centered' });
+  }
+
+  openFiles() {
+    this.modalRef = this.modalService.show(FilesComponent, { class: 'modal-xl opacity-75 modal-dialog-centered' });
   }
 }
