@@ -94,23 +94,41 @@ export class FilesComponent implements OnInit {
 
   downloadFile(path: string, event: Event) {
     event.stopPropagation(); // Prevenir el evento click del li
-    this.fileService.getFileContent(path).pipe(
-      tap(blob => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        const fileName = path.split('/').pop() ?? '';
-        a.download = fileName; // Solo el nombre del archivo
-        a.click();
-        window.URL.revokeObjectURL(url);
-      }),
-      catchError(error => {
-        console.error('Error downloading file:', error);
-        return of(null);
-      })
-    ).subscribe();
+    const file = this.files.find(f => f.path === path);
+    if (file?.isDirectory) {
+      this.fileService.downloadFolderAsZip(path).pipe(
+        tap(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          const folderName = path.split('\\').pop() ?? 'folder';
+          a.download = `${folderName}.zip`;
+          a.click();
+          window.URL.revokeObjectURL(url);
+        }),
+        catchError(error => {
+          console.error('Error downloading folder:', error);
+          return of(null);
+        })
+      ).subscribe();
+    } else {
+      this.fileService.getFileContent(path).pipe(
+        tap(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          const fileName = path.split('\\').pop() ?? '';
+          a.download = fileName; // Solo el nombre
+          a.click();
+          window.URL.revokeObjectURL(url);
+        }),
+        catchError(error => {
+          console.error('Error downloading file:', error);
+          return of(null);
+        })
+      ).subscribe();
+    }
   }
-
 
   goBack() {
     if (this.currentPath !== 'desktop') {

@@ -17,4 +17,8 @@ export class FileService {
   getFileContent(path: string): Observable<Blob> {
     return this.http.get(`${this.baseUrl}/content`, { params: { path }, responseType: 'blob' });
   }
+
+  downloadFolderAsZip(path: string): Observable<Blob> {
+    return this.http.get(`${this.baseUrl}/download-zip`, { params: { path }, responseType: 'blob' });
+  }
 }

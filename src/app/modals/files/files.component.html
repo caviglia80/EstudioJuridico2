@@ -1,6 +1,5 @@
 <div class="modal-content rounded-3 border-0">
   <div class="modal-header">
-
     <button type="button" class="btn-close btn-close-black p-2" aria-label="Cerrar" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -18,7 +17,6 @@
       <button [class.active]="currentPath === 'documents'" (click)="goToFolder('documents')">Documentos</button>
       <button [class.active]="currentPath === 'pictures'" (click)="goToFolder('pictures')">Imagenes</button>
     </div>
-
   </div>
 
   <div class="modal-body p-1">
