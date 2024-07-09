@@ -139,3 +139,19 @@
   height: 100px;
   width: 100%;
 }
+
+.preview-section {
+  padding: 10px;
+  border-top: 1px solid #dee2e6;
+  margin-top: 10px;
+}
+
+button[mat-icon-button] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+button[mat-icon-button]:hover {
+  background: rgba(0, 0, 0, 0.1);
+}

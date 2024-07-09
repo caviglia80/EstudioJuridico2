@@ -27,9 +27,15 @@
         <mat-spinner></mat-spinner>
       </div>
       <ul *ngIf="!loading && files.length > 0; else emptyFolder">
-        <li *ngFor="let file of files" (click)="navigateTo(file)" class="file-item">
-          <i [class]="getIcon(file)"></i>
-          {{ file.name }}
+        <li *ngFor="let file of files" (click)="navigateTo(file)"
+          class="file-item d-flex justify-content-between align-items-center ps-2">
+          <span>
+            <i [class]="getIcon(file)"></i>
+            {{ file.name }}
+          </span>
+          <button mat-icon-button (click)="downloadFile(file.path, $event)">
+            <mat-icon>download</mat-icon>
+          </button>
         </li>
       </ul>
       <ng-template #emptyFolder>
@@ -38,5 +44,10 @@
         </div>
       </ng-template>
     </div>
+  </div>
+
+  <div *ngIf="previewContent" class="preview-section">
+    <h5>Previsualización</h5>
+    <div [innerHTML]="previewContent"></div>
   </div>
 </div>

@@ -3,6 +3,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { FileService } from './file.service';
 import { tap, catchError, finalize } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-files',
@@ -10,13 +11,18 @@ import { of } from 'rxjs';
   styleUrls: ['./files.component.css']
 })
 export class FilesComponent implements OnInit {
-  constructor(public modalRef: BsModalRef, private fileService: FileService) { }
+  constructor(
+    public modalRef: BsModalRef,
+    private fileService: FileService,
+    private sanitizer: DomSanitizer
+  ) { }
 
   files: any[] = [];
   currentPath: string = 'desktop'; // Inicia en el escritorio
   directoriesCount: number = 0;
   filesCount: number = 0;
   loading: boolean = false;
+  previewContent: SafeHtml | null = null;
 
   ngOnInit() {
     this.loadFiles(this.currentPath);
@@ -35,8 +41,8 @@ export class FilesComponent implements OnInit {
             return 1;
           }
           if (!a.isDirectory && !b.isDirectory) {
-            const extA = a.name.split('.').pop().toLowerCase();
-            const extB = b.name.split('.').pop().toLowerCase();
+            const extA = a.name.split('.').pop()?.toLowerCase() || '';
+            const extB = b.name.split('.').pop()?.toLowerCase() || '';
             return extA.localeCompare(extB);
           }
           return a.name.localeCompare(b.name);
@@ -53,20 +59,48 @@ export class FilesComponent implements OnInit {
   }
 
   navigateTo(file: any) {
-    if (file.isDirectory) {
-      this.loadFiles(file.path);
-    } else {
-      this.downloadFile(file.path);
+    if (file?.isDirectory) {
+      this.goToFolder(file.path);
+    } else if (file) {
+      this.previewFile(file);
     }
   }
 
-  downloadFile(path: string) {
+  previewFile(file: any) {
+    if (file && !file.isDirectory && this.isTextFile(file.name)) {
+      this.fileService.getFileContent(file.path).pipe(
+        tap(blob => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            this.previewContent = this.sanitizer.bypassSecurityTrustHtml(reader.result as string);
+          };
+          reader.readAsText(blob);
+        }),
+        catchError(error => {
+          console.error('Error previewing file:', error);
+          return of(null);
+        })
+      ).subscribe();
+    } else {
+      this.previewContent = null; // Clear previous preview if file is not supported
+    }
+  }
+
+  isTextFile(fileName: string): boolean {
+    const textFileExtensions = ['txt', 'md', 'html', 'css', 'js', 'json', 'bat', 'dat', 'ini'];
+    const extension = fileName.split('.').pop()?.toLowerCase() || '';
+    return textFileExtensions.includes(extension);
+  }
+
+  downloadFile(path: string, event: Event) {
+    event.stopPropagation(); // Prevenir el evento click del li
     this.fileService.getFileContent(path).pipe(
       tap(blob => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = path.split('/').pop() ?? '';
+        const fileName = path.split('/').pop() ?? '';
+        a.download = fileName; // Solo el nombre del archivo
         a.click();
         window.URL.revokeObjectURL(url);
       }),
@@ -76,6 +110,7 @@ export class FilesComponent implements OnInit {
       })
     ).subscribe();
   }
+
 
   goBack() {
     if (this.currentPath !== 'desktop') {
@@ -94,7 +129,7 @@ export class FilesComponent implements OnInit {
     if (file.isDirectory) {
       return 'bi bi-folder';
     }
-    const extension = file.name.split('.').pop().toLowerCase();
+    const extension = file.name.split('.').pop()?.toLowerCase() || '';
     switch (extension) {
       case 'txt':
       case 'md':
