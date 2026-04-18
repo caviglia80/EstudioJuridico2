@@ -1,0 +1,35 @@
+<div class="modal-content login-modal">
+    <ej-modal-header title="Ingresar" />
+
+    <div class="login-header">
+        <div class="login-icon" aria-hidden="true">
+            <img class="login-icon-image" ngSrc="assets/img/private-modal.png" width="480" height="320" alt="" />
+        </div>
+    </div>
+
+    <form class="login-form" (submit)="$event.preventDefault(); submit()" autocomplete="on" novalidate>
+        <input class="login-autofill-username" type="text" name="username" autocomplete="username" [value]="autofillUsername" tabindex="-1" />
+
+        <div class="login-field">
+            <label for="login-password">Contraseña</label>
+            <input #passInput id="login-password" name="password" type="password" autocomplete="current-password" required [disabled]="loading() || !!successName()" [value]="password()" (input)="password.set(passInput.value)" />
+        </div>
+
+        @if (error(); as msg) {
+        <div class="login-message login-error" role="alert">{{ msg }}</div>
+        }
+
+        @if (successName(); as name) {
+        <output class="login-message login-success">Bienvenido/a, {{ name }}.</output>
+        }
+
+        <button type="submit" class="login-submit" [disabled]="loading() || !!successName()">
+            @if (loading()) {
+            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+            <span>Validando…</span>
+            } @else {
+            <span>Ingresar</span>
+            }
+        </button>
+    </form>
+</div>

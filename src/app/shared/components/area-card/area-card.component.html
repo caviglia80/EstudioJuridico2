@@ -1,0 +1,10 @@
+<div class="card h-100 overflow-hidden text-bg-dark rounded-4">
+    <div class="d-flex flex-column h-100 p-4">
+        <h3 class="area-title">{{ title() }}</h3>
+        <ul class="area-list">
+            @for (item of items(); track item) {
+            <li>{{ item }}</li>
+            }
+        </ul>
+    </div>
+</div>

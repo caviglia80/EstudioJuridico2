@@ -1,11 +1,24 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { filter, map } from 'rxjs';
+import { SocialButtonsComponent } from './shared/components';
 
 @Component({
-  selector: 'app-root',
+  selector: 'ej-root',
+  imports: [RouterOutlet, SocialButtonsComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'Estudio Juridico';
+  private readonly url = toSignal(
+    inject(Router).events.pipe(
+      filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+      map(e => e.urlAfterRedirects),
+    ),
+    { initialValue: '/' },
+  );
 
+  protected readonly showSocial = computed(() => !this.url().startsWith('/gideon'));
 }

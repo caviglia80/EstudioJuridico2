@@ -1,0 +1,27 @@
+.area-title {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.area-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+        position: relative;
+        padding-left: 1rem;
+        padding-block: 0.15rem;
+
+        &::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            opacity: 0.5;
+        }
+    }
+}

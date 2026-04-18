@@ -1,5 +1,6 @@
-<body class="p-2 imagen">
-  <router-outlet></router-outlet>
-
-  <app-social-buttons></app-social-buttons>
-</body>
+<div class="p-2 imagen">
+  <router-outlet />
+  @if (showSocial()) {
+  <ej-social-buttons />
+  }
+</div>

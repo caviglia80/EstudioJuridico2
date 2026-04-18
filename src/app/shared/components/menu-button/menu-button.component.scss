@@ -1,0 +1,50 @@
+.menu-button {
+    background: transparent;
+    border: none;
+    padding: 4px 20px;
+    color: var(--color-text);
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.menu-button-accent {
+    color: #c9b173;
+
+    .icono-miniatura {
+        filter: sepia(1) saturate(2) brightness(0.9) hue-rotate(10deg);
+    }
+}
+
+.btn-icon {
+    position: relative;
+    transition: .5s ease;
+
+    &:hover {
+        padding-left: 75px;
+        transition: .3s ease;
+
+        .icono-miniatura {
+            display: inline;
+        }
+    }
+}
+
+.icono-miniatura {
+    display: none;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: auto;
+    opacity: .5;
+}

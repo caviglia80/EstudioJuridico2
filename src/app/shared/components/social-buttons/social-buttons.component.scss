@@ -1,0 +1,27 @@
+.float-button-wsp,
+.float-button-ig,
+.float-button-fb {
+    cursor: pointer;
+    transition: all .2s;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--color-icon-default);
+
+    &:hover {
+        transform: scale(120%);
+        filter: brightness(120%);
+    }
+}
+
+.float-button-wsp:hover {
+    color: var(--color-wsp);
+}
+
+.float-button-ig:hover svg {
+    fill: url(#gradient);
+}
+
+.float-button-fb:hover {
+    color: var(--color-fb);
+}

@@ -1,0 +1,13 @@
+<div class="modal-content">
+    <ej-modal-header title="Nuestras especialidades" />
+
+    <div class="modal-body p-1">
+        <div class="areas row row-cols-1 row-cols-lg-2 align-items-stretch g-1 p-1">
+            @for (area of areas; track area.title) {
+            <div class="col p-1">
+                <ej-area-card [title]="area.title" [items]="area.items" />
+            </div>
+            }
+        </div>
+    </div>
+</div>

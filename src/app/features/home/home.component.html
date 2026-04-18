@@ -1,0 +1,49 @@
+<main class="home-vista text-white">
+    @if (auth.isAuthenticated()) {
+    <div class="home-settings-wrap">
+        <button type="button" class="home-settings-button" (click)="openSettings()" aria-label="Configuración">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M16 7h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M4 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M14 17h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <circle cx="13" cy="7" r="2.2" stroke="currentColor" stroke-width="1.8" />
+                <circle cx="11" cy="17" r="2.2" stroke="currentColor" stroke-width="1.8" />
+            </svg>
+        </button>
+    </div>
+    }
+
+    <div class="position-absolute top-50 start-50 translate-middle text-center">
+        <img ngSrc="assets/img/logo.png" alt="Estudio Jurídico Caviglia y Asociados" width="392" height="262" priority />
+        <h1 class="text-estudio">
+            <span class="d-block text-nowrap">ESTUDIO JURÍDICO</span>
+            <span class="d-block text-nowrap">CAVIGLIA Y ASOCIADOS</span>
+        </h1>
+        <p class="tagline">Abogados en Junín &middot; Atención 24 h por WhatsApp</p>
+    </div>
+
+    <div class="position-absolute top-0 start-0 px-3 mt-3">
+        <ej-menu-button label="Consultas" (action)="openConsulta()" />
+        <ej-menu-button label="Áreas" (action)="openAreas()" />
+        <ej-menu-button label="Contacto" (action)="openContacto()" />
+        @if (auth.isAuthenticated()) {
+        <div class="mt-3">
+            <ej-menu-button label="Gideon" [accent]="true" (action)="goToGideon()" />
+        </div>
+        } @else {
+        <ej-menu-button label="Ingresar" (action)="openLogin()" />
+        }
+    </div>
+
+    <div class="position-absolute bottom-0 start-0 px-3">
+        <p class="home-info pe-5">
+            Junín, Provincia de Buenos Aires y CABA<br />
+            <span class="home-horario">Lunes a viernes {{ hours }} &middot; WhatsApp 24 h</span>
+        </p>
+        <p class="footer-credits">
+            &copy; {{ currentYear }} Estudio Jurídico Caviglia &amp; Asociados
+            <span class="d-block">Desarrollo: <a href="https://www.linkedin.com/in/francisco-caviglia/" class="linkedin" target="_blank" rel="noopener noreferrer">Francisco Caviglia</a></span>
+        </p>
+    </div>
+</main>

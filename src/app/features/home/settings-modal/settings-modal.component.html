@@ -1,0 +1,21 @@
+<div class="settings-modal">
+    <ej-modal-header title="Configuración" />
+
+    <div class="settings-modal__content">
+        <ul class="settings-modal__list">
+            <li class="settings-modal__item">
+                <button type="button" class="settings-modal__option" (click)="openChangePassword()">
+                    <span class="settings-modal__option-label">Cambiar contraseña</span>
+                    <span class="settings-modal__option-text">Actualizar la clave de acceso.</span>
+                </button>
+            </li>
+
+            <li class="settings-modal__item">
+                <button type="button" class="settings-modal__option settings-modal__option-danger" (click)="logout()">
+                    <span class="settings-modal__option-label">Cerrar sesión</span>
+                    <span class="settings-modal__option-text">Finalizar la sesión actual.</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

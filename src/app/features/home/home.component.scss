@@ -1,0 +1,92 @@
+.home-vista {
+    position: relative;
+    min-height: 100%;
+
+    img {
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+}
+
+.home-settings-wrap {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+}
+
+.home-settings-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.95rem;
+    height: 2.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    background: transparent;
+    color: #d8c690;
+    box-shadow: none;
+    transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.home-settings-button svg {
+    opacity: 0.92;
+}
+
+.home-settings-button:hover {
+    transform: scale(1.04);
+    color: #f0ddb0;
+    border-color: rgba(201, 177, 115, 0.35);
+}
+
+.home-settings-button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(201, 177, 115, 0.45);
+}
+
+.home-info {
+    font-size: 18px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+.linkedin {
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.text-estudio {
+    font-family: 'Merriweather', serif;
+    color: #ccc;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-size: 1.4rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+}
+
+.tagline {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+.home-horario {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.footer-credits {
+    font-size: 65%;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+h1,
+p {
+    user-select: none;
+}

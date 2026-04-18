@@ -1,0 +1,13 @@
+<div class="delete-message-modal">
+    <ej-modal-header title="Confirmar eliminación" />
+
+    <div class="delete-message-modal__hero">
+        <h2 class="delete-message-modal__title">¿Desea eliminar este mensaje?</h2>
+        <p class="delete-message-modal__lead">El mensaje dejará de mostrarse en el historial de esta conversación.</p>
+    </div>
+
+    <div class="delete-message-modal__actions">
+        <button type="button" class="delete-message-modal__button delete-message-modal__button-secondary" (click)="cancel()">Cancelar</button>
+        <button type="button" class="delete-message-modal__button delete-message-modal__button-danger" (click)="confirm()">Eliminar mensaje</button>
+    </div>
+</div>

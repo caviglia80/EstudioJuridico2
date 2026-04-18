@@ -1,8 +1,6 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "rootDir": "./src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -10,32 +8,23 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "erasableSyntaxOnly": true,
     "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
-    "target": "ES2022",
+    "target": "ES2023",
     "module": "ES2022",
-    "useDefineForClassFields": false,
+    "useDefineForClassFields": true,
     "lib": [
-      "ES2022",
+      "ES2023",
       "dom"
     ],
     "paths": {
-      "@app/*": [
-        "app/*"
-      ],
-      "@shared/*": [
-        "app/shared/*"
-      ],
-      "@routes/*": [
-        "app/routes/*"
-      ],
-      "@modals/*": [
-        "src/app/modals/*"
-      ]
+      "@app/*": [ "./src/app/*" ],
+      "@shared/*": [ "./src/app/shared/*" ],
+      "@pages/*": [ "./src/app/features/*" ],
+      "@env/*": [ "./src/environments/*" ]
     }
   },
   "angularCompilerOptions": {

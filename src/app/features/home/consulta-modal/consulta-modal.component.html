@@ -1,0 +1,13 @@
+<div class="modal-content">
+    <ej-modal-header title="Consulta gratis por WhatsApp" />
+
+    <div class="modal-body p-1">
+        <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-1 p-1">
+            @for (item of items; track item.label) {
+            <div class="col p-1 pressButton">
+                <ej-card-button [label]="item.label" (action)="enviarTexto(item.text)" />
+            </div>
+            }
+        </div>
+    </div>
+</div>
