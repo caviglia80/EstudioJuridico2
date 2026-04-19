@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    gideonBaseUrl: 'http://root:18789',
+    gideonBaseUrl: 'https://api.estudiocavigliayasoc.com.ar',
 };
