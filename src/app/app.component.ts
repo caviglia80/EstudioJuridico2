@@ -20,5 +20,6 @@ export class AppComponent {
     { initialValue: '/' },
   );
 
-  protected readonly showSocial = computed(() => !this.url().startsWith('/gideon'));
+  protected readonly isChatRoute = computed(() => this.url().startsWith('/gideon'));
+  protected readonly showSocial = computed(() => !this.isChatRoute());
 }

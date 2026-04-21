@@ -510,6 +510,11 @@ $header-height: 3.5rem;
     max-height: 120px;
     transition: border-color 0.2s, box-shadow 0.2s;
 
+    @media (max-width: 767.98px) {
+        // Prevents iOS Safari auto-zoom on focus (requires >= 16px)
+        font-size: 1rem;
+    }
+
     &::placeholder {
         color: rgba(255, 255, 255, 0.45);
     }
